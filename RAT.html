@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>✦ ACCESS DENIED ✦ VIP ONLY ✦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0101, #000000);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Share Tech Mono', 'Courier New', 'Fira Code', monospace;
+            position: relative;
+            overflow-y: auto;   /* Diubah agar bisa scroll */
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* █████ ANIMATED GLOW GRID █████ */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, rgba(255,0,0,0.08) 1px, transparent 1px),
+                repeating-linear-gradient(90deg, rgba(255,0,0,0.08) 1px, transparent 1px);
+            background-size: 45px 45px;
+            pointer-events: none;
+            z-index: 0;
+            animation: gridPulse 6s infinite alternate;
+        }
+
+        @keyframes gridPulse {
+            0% { opacity: 0.3; background-size: 45px 45px; }
+            100% { opacity: 0.7; background-size: 55px 55px; }
+        }
+
+        /* █████ SCANLINE + NOISE █████ */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMTUiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* █████ MAIN CARD █████ */
+        .denial-card {
+            position: relative;
+            z-index: 20;
+            background: rgba(8, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 0, 0, 0.7);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3), inset 0 0 15px rgba(255,0,0,0.1);
+            transition: 0.25s ease;
+            animation: borderGlitch 3s infinite;
+            margin: 30px auto;
+        }
+
+        @keyframes borderGlitch {
+            0%, 100% { border-color: #f33; box-shadow: 0 0 20px #f33; }
+            33% { border-color: #f00; box-shadow: 0 0 35px #f00; }
+            66% { border-color: #a00; box-shadow: 0 0 20px #a00; }
+        }
+
+        /* ikon animasi */
+        .lock-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 6px #f00);
+            animation: iconPulse 1.2s infinite alternate;
+        }
+
+        @keyframes iconPulse {
+            0% { text-shadow: 0 0 2px #f00; transform: scale(1);}
+            100% { text-shadow: 0 0 15px #f33; transform: scale(1.05);}
+        }
+
+        /* Glitch Text utama */
+        .glitch-main {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #f33;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.5), -0.05em -0.025em 0 rgba(255,80,0,0.3);
+            animation: glitchText 1.8s infinite;
+            margin-bottom: 0.8rem;
+        }
+
+        @keyframes glitchText {
+            0%, 100% { transform: skew(0deg, 0deg); text-shadow: 0.05em 0 0 #f00, -0.05em -0.025em 0 #f80; }
+            25% { transform: skew(1deg, 0.5deg); text-shadow: -0.05em 0.025em 0 #f00, 0.05em 0.025em 0 #f80; }
+            50% { transform: skew(-0.5deg, -0.2deg); text-shadow: 0.025em 0.05em 0 #f00, -0.025em -0.05em 0 #f80; }
+            75% { transform: skew(0.2deg, 0.8deg); text-shadow: -0.025em -0.025em 0 #f00, 0.025em 0.05em 0 #f80; }
+        }
+
+        .sub-warning {
+            font-size: 0.9rem;
+            color: #f88;
+            background: rgba(80,0,0,0.4);
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .denial-message {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 1.5rem 0;
+            color: #fbb;
+            border-left: 3px solid #f00;
+            border-right: 3px solid #f00;
+            background: rgba(30,0,0,0.5);
+            padding: 1rem;
+            border-radius: 16px;
+            font-weight: 500;
+        }
+
+        /* Terminal style fake log */
+        .error-log {
+            background: #0a0000;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 0.7rem;
+            font-family: monospace;
+            margin: 20px 0 25px;
+            border-radius: 14px;
+            border: 1px solid #c44;
+            color: #f77;
+            box-shadow: inset 0 0 8px #300;
+        }
+
+        .error-log span {
+            display: block;
+            line-height: 1.5;
+        }
+
+        .blink {
+            animation: blinkCursor 1s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* TOMBOL VIP */
+        .vip-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(95deg, #a00, #500);
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffddaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 0 10px #f00;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+        }
+
+        .vip-button:hover {
+            background: #f33;
+            color: #000;
+            box-shadow: 0 0 25px #f44;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .access-footer {
+            margin-top: 30px;
+            font-size: 0.65rem;
+            color: #933;
+            text-align: center;
+            border-top: 1px dashed #c44;
+            padding-top: 15px;
+        }
+
+        /* Responsive & Scroll friendly */
+        @media (max-width: 550px) {
+            .denial-card {
+                padding: 1.5rem;
+            }
+            .glitch-main {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .lock-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <div class="denial-card">
+        <div class="lock-icon">⛔</div>
+        <div class="glitch-main">ACCESS DENIED</div>
+        <div class="sub-warning">✦ VIP ONLY CONTENT ✦</div>
+
+        <div class="denial-message">
+            ⚡ Fitur ini tidak dapat diakses dengan <strong style="color:#faa">ROLE FREE</strong>.<br>
+            Silakan upgrade ke akun <strong style="color:#ff8c00">VIP TIER</strong> untuk mendapatkan akses penuh.
+        </div>
+
+        <div class="error-log">
+            <span>> SECURITY_LAYER: VERIFICATION_FAILED</span>
+            <span>> USER_ROLE: 'FREE_TIER' → ACCESS_LEVEL: 0</span>
+            <span>> TARGET_RESOURCE: /vip/dashboard → STATUS: 403 FORBIDDEN</span>
+            <span>> SUGGESTION: UPGRADE_TOKEN_REQUIRED <span class="blink">_</span></span>
+        </div>
+
+        <a href="https://t.me/NazNotDev" class="vip-button" target="_blank">
+            💎 UPGRADE TO VIP 💎
+        </a>
+
+        <div class="access-footer">
+            ⚠️ All activities are monitored — unauthorized attempts will be logged ⚠️
+        </div>
+    </div>
+
+    <script>
+        console.log("%c⛔ ACCESS BLOCKED: INSUFFICIENT PRIVILEGES ⛔", "color:#ff4444; font-size:14px; font-family:monospace;");
+        // efek hover tambahan untuk tombol
+        const card = document.querySelector('.denial-card');
+        card.style.animation = 'borderGlitch 3s infinite';
+    </script>
+</body>
+</html>
